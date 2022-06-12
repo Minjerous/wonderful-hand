@@ -1,0 +1,18 @@
+[Network]
+GameAddr = ":8080"
+GRPCAddr = ":9000"
+
+[Server]
+Name = "Wonderful Hand Server"
+Multicore = true
+ReusePort = true
+
+[Etcd]
+# services discover
+Endpoints = ["127.0.0.1:2379", "127.0.0.1:2479", "127.0.0.1:2579"]
+
+[GRPC]
+# GRPC services names
+User = "user-rpc"
+Chess = "chess-rpc"
+Room = "room-rpc"

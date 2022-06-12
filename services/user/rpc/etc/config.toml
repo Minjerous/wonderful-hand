@@ -1,0 +1,25 @@
+[Network]
+Host = "localhost:8000"
+Addr = ":8000"
+
+[Server]
+Name = "user-rpc"
+
+[Mysql]
+DataSourceName = "root:12345678@tcp(localhost:3306)/wonderful_hand?charset=utf8mb4&parseTime=true&loc=Local"
+MaxIdleConns = 10
+MaxOpenConns = 100
+ConnMaxLifetime = 60
+
+[[Redis]]
+Host = "127.0.0.1:6397"
+Password = ""
+Type = "node"
+
+[Auth]
+AccessSecret = "uOvKLmVfztaXGpNYd4Z0I1SiT7MweJhl"
+AccessExpire = 86400
+
+[Etcd]
+# services discover
+Endpoints = ["127.0.0.1:2379", "127.0.0.1:2479", "127.0.0.1:2579"]

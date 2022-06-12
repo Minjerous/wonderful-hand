@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "/room";
+
+message room_create_request {
+  uint64 uid = 1;
+  string token = 2;
+  string password = 3;
+}
+
+message room_create_response {
+  int32  status_code = 1;
+  string status_msg = 2;
+  string room_id = 3;
+}
+
+message room_join_watch_request {
+  uint64 uid = 1;
+  string token = 2;
+  string room_id = 3;
+  string password = 4;
+}
+
+message room_join_watch_response {
+  int32  status_code = 1;
+  string status_msg = 2;
+}
+
+message room_status_request {
+  string room_id = 1;
+}
+
+message room_status_response {
+  int32  status_code = 1;
+  string status_msg = 2;
+  int32 room_status_code = 3;
+}

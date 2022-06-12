@@ -1,0 +1,11 @@
+[Network]
+Host = "localhost:8000"
+Addr = ":8000"
+
+[Server]
+Name = "room-rpc"
+
+[[Redis]]
+Host = "127.0.0.1:6397"
+Password = ""
+Type = "node"

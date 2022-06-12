@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package game;
+
+option go_package = "/game";
+
+message game_send_packet_request {
+  uint64 uid = 1;
+  bytes data = 2;
+}
+
+message game_send_packet_response {
+  int32  status_code = 1;
+  string status_msg = 2;
+}
+
+service GameService {
+  rpc SendPacket(game_send_packet_request) returns(game_send_packet_response);
+}

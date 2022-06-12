@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "/user";
+
+message user_login_register_request {
+  string username = 1;
+  string password = 2;
+}
+
+message user_login_register_response {
+  int32  status_code = 1;
+  string status_msg = 2;
+  int64  user_id = 3;
+  string access_token = 4;
+  string refresh_token = 5;
+}
+
+message user_token_refresh_request {
+  string refresh_token = 1;
+}
+
+message user_token_refresh_response {
+  int32  status_code = 1;
+  string status_msg = 2;
+  string access_token = 3;
+  string refresh_token = 4;
+}
+
+message user_token_verify_request {
+  string access_token = 1;
+}
+
+message user_token_verify_response {
+  int32  status_code = 1;
+  string status_msg = 2;
+}
+
+service UserService {
+  rpc UserLogin(user_login_register_request) returns(user_login_register_response);
+  rpc UserRegister(user_login_register_request) returns(user_login_register_response);
+  rpc UserTokenRefresh(user_token_refresh_request) returns(user_token_refresh_response);
+  rpc UserTokenVerify(user_token_verify_request) returns(user_token_verify_response);
+}

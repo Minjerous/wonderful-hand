@@ -1,0 +1,18 @@
+[Server]
+# name of this service
+Name = "douyin-user-api"
+# listening addresses
+Address = ":8080"
+
+[Server.HTTPCert]
+Enable = false
+CertFilePath = ""
+KeyFilePath = ""
+
+[Etcd]
+# services discover
+Endpoints = ["127.0.0.1:2379", "127.0.0.1:2479", "127.0.0.1:2579"]
+
+[GRPC]
+# GRPC services names
+User = "user-rpc"
